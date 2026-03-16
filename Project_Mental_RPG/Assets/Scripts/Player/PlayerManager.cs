@@ -7,6 +7,8 @@ public class PlayerManager : MonoBehaviour
     private Vector2 movement;
     private Rigidbody2D rb;
 
+    protected PlayerSystems playerManager;
+
     private void Awake()
     {
         playerInputs = new PlayerInputs();
@@ -16,10 +18,20 @@ public class PlayerManager : MonoBehaviour
         playerInputs.PlayerMovement.Moving.canceled += ctx => movement = Vector2.zero;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         MovePlayer();
     }
+
+    public virtual void Init(PlayerSystems manager)
+    {
+        this.playerManager = manager;
+    }
+
+    public virtual void Tick()
+    {
+
+    }   
 
     private void MovePlayer()
     {

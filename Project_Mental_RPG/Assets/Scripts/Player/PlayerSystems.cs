@@ -8,6 +8,7 @@ using UnityEngine.Rendering.VirtualTexturing;
 
 public class PlayerSystems : MonoBehaviour
 {
+    //[SerializeField] List<PlayerManager> systems;
     PlayerManager[] systems;
 
     [NonSerialized] public PHealth myHealthSystem;

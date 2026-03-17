@@ -18,20 +18,29 @@ public class PlayerManager : MonoBehaviour
         playerInputs.PlayerMovement.Moving.canceled += ctx => movement = Vector2.zero;
     }
 
-    private void FixedUpdate()
-    {
-        MovePlayer();
-    }
-
+    // Initalizes player sub classes
     public virtual void Init(PlayerSystems manager)
     {
         this.playerManager = manager;
     }
 
+    // Call in Update()
     public virtual void Tick()
     {
 
-    }   
+    }
+
+    // Call in FixedUpdate
+    public virtual void FixedTick()
+    {
+        MovePlayer();
+    }
+
+    // Call in LateUpdate
+    public virtual void LateTick()
+    {
+
+    }
 
     private void MovePlayer()
     {

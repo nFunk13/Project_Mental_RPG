@@ -12,6 +12,7 @@ public class PlayerSystems : MonoBehaviour
     PlayerManager[] systems;
 
     [NonSerialized] public PHealth myHealthSystem;
+    [NonSerialized] public PMovement myMovementSystem;
 
     public T GetSystems<T>() where T : PlayerManager
     {
@@ -28,6 +29,7 @@ public class PlayerSystems : MonoBehaviour
     private void OnEnable()
     {
         myHealthSystem = GetSystems<PHealth>();
+        myMovementSystem = GetSystems<PMovement>();
     }
 
     private void Awake()
@@ -44,6 +46,14 @@ public class PlayerSystems : MonoBehaviour
         foreach (PlayerManager manager in systems)
         {
             manager.Tick();
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        foreach (PlayerManager manager in systems)
+        {
+            manager.FixedTick();
         }
     }
 }

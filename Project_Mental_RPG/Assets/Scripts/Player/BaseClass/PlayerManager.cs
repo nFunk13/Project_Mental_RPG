@@ -2,20 +2,11 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    PlayerInputs playerInputs;
-
-    private Vector2 movement;
-    private Rigidbody2D rb;
-
     protected PlayerSystems playerManager;
 
     private void Awake()
     {
-        playerInputs = new PlayerInputs();
-        rb = GetComponent<Rigidbody2D>();
-
-        playerInputs.PlayerMovement.Moving.performed += ctx => movement = ctx.ReadValue<Vector2>();
-        playerInputs.PlayerMovement.Moving.canceled += ctx => movement = Vector2.zero;
+        
     }
 
     // Initalizes player sub classes
@@ -33,7 +24,7 @@ public class PlayerManager : MonoBehaviour
     // Call in FixedUpdate
     public virtual void FixedTick()
     {
-        MovePlayer();
+        //MovePlayer();
     }
 
     // Call in LateUpdate
@@ -42,18 +33,15 @@ public class PlayerManager : MonoBehaviour
 
     }
 
-    private void MovePlayer()
-    {
-        rb.linearVelocity = movement * 5;
-    }
+    
 
-    private void OnEnable()
-    {
-        playerInputs.Enable();
-    }
+    //private void OnEnable()
+    //{
+    //    playerInputs.Enable();
+    //}
 
-    private void OnDisable()
-    {
-        playerInputs.Disable();
-    }
+    //private void OnDisable()
+    //{
+    //    playerInputs.Disable();
+    //}
 }

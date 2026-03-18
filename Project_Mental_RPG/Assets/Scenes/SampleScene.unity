@@ -440,11 +440,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 965796785}
+  - component: {fileID: 965796790}
+  - component: {fileID: 965796789}
   - component: {fileID: 965796788}
   - component: {fileID: 965796787}
   - component: {fileID: 965796786}
-  - component: {fileID: 965796790}
-  - component: {fileID: 965796789}
+  - component: {fileID: 965796791}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -578,6 +579,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &965796791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965796784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41218ea8d92974c49a5f80fc680e1de6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PMovement
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

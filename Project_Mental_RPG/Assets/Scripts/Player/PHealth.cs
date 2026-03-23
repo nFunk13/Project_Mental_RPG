@@ -1,8 +1,11 @@
+using System;
 using UnityEngine;
 
 public class PHealth : PlayerManager
 {
     [SerializeField] int maxHealth = 10;
+
+    public event Action healthChanged;
 
     public int currentHealth { get; private set; }
 
@@ -15,5 +18,10 @@ public class PHealth : PlayerManager
     public override void Tick()
     {
         Debug.Log("Current health: " +  currentHealth);
+    }
+
+    public void OnDamage(int damage)
+    {
+        currentHealth -= damage;
     }
 }

@@ -24,24 +24,12 @@ public class PlayerManager : MonoBehaviour
     // Call in FixedUpdate
     public virtual void FixedTick()
     {
-        //MovePlayer();
+        
     }
 
     // Call in LateUpdate
     public virtual void LateTick()
     {
-
+        
     }
-
-    
-
-    //private void OnEnable()
-    //{
-    //    playerInputs.Enable();
-    //}
-
-    //private void OnDisable()
-    //{
-    //    playerInputs.Disable();
-    //}
 }
